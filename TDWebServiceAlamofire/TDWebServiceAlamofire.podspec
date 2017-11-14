@@ -30,7 +30,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'TDWebServiceAlamofire/Classes/**/*'
+  s.source_files = 'TDWebServiceAlamofire/TDWebServiceAlamofire/Classes/**/*'
   
   # s.resource_bundles = {
   #   'TDWebServiceAlamofire' => ['TDWebServiceAlamofire/Assets/*.png']
