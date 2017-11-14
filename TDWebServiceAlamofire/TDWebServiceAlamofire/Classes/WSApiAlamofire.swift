@@ -10,6 +10,7 @@ import Alamofire
 import TDWebService
 
 public protocol WebServiceAbleAlamofire:  WebServiceAble{
+    
 }
 
 extension WebServiceAbleAlamofire{
