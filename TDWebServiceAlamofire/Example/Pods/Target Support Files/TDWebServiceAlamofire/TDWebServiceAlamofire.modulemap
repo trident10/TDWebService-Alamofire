@@ -1,0 +1,6 @@
+framework module TDWebServiceAlamofire {
+  umbrella header "TDWebServiceAlamofire-umbrella.h"
+
+  export *
+  module * { export * }
+}

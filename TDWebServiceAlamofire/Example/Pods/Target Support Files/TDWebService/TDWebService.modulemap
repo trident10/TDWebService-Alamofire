@@ -1,0 +1,6 @@
+framework module TDWebService {
+  umbrella header "TDWebService-umbrella.h"
+
+  export *
+  module * { export * }
+}
