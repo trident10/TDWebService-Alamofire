@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TDWebServiceAlamofire'
-  s.version          = '0.1.0'
+  s.version          = '4.5.1.1.0'
   s.summary          = 'An Alamofire API for TDWebService'
 
 # This description is used to generate tags and improve search results.
@@ -21,16 +21,16 @@ Pod::Spec.new do |s|
 An Alamofire API for TDWebService. Use this directly if you need to use Alamofire
                        DESC
 
-  s.homepage         = 'https://github.com/trident10/TDWebServiceAlamofire'
+  s.homepage         = 'https://github.com/trident10/TDWebService-Alamofire'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'trident10' => 'abhimanyujindal10@gmail.com' }
-  s.source           = { :git => 'https://github.com/trident10/TDWebServiceAlamofire.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/trident10/TDWebService-Alamofire.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'TDWebServiceAlamofire/TDWebServiceAlamofire/Classes/**/*'
+  s.source_files = 'TDWebServiceAlamofire/Classes/**/*'
   
   # s.resource_bundles = {
   #   'TDWebServiceAlamofire' => ['TDWebServiceAlamofire/Assets/*.png']
@@ -38,6 +38,5 @@ An Alamofire API for TDWebService. Use this directly if you need to use Alamofir
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'Alamofire', '4.5.0'
   s.dependency 'TDWebService'
 end

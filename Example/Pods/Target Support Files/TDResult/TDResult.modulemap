@@ -1,0 +1,6 @@
+framework module TDResult {
+  umbrella header "TDResult-umbrella.h"
+
+  export *
+  module * { export * }
+}

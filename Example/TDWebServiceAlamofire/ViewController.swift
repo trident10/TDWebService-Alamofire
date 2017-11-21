@@ -9,6 +9,7 @@
 import UIKit
 import TDWebServiceAlamofire
 import TDWebService
+import TDResult
 
 class ViewController: UIViewController {
     
@@ -43,13 +44,14 @@ struct User{
     
 }
 
-struct NehaoValidator: ResultValidatorApi{
-    func isResponseValid(_ result: WSResult) -> TDResult<Bool, TDError> {
-        let resultJson = result as? [String: Any]
+struct NehaoValidator: TDResultValidatorApi{
+    func validateResponse(_ result: TDWSResult) -> TDResult<TDWSResult, TDError> {
+        let json = result as! TDJson
+        let resultJson = json.jsonData as? [String: Any]
         if resultJson == nil{
             return TDResult.Error(TDError.init(Validation.NotAuthorised))
         }
-        return TDResult.init(value: true)
+        return TDResult.init(value: result)
     }
     
     enum Validation: Error{
@@ -59,7 +61,7 @@ struct NehaoValidator: ResultValidatorApi{
     
 }
 
-class Test: WebServiceAbleAlamofire{
+class Test: TDWebserviceAlamofire{
     
     func url() -> String {
         return "https://httpbin.org/get"
@@ -69,7 +71,11 @@ class Test: WebServiceAbleAlamofire{
         case Unauthorised
     }
     
-    func resultValidatorClient() -> ResultValidatorApi {
+    func resultType() -> TDResultType {
+        return .JSON
+    }
+    
+    func validalidatorClient() -> TDResultValidatorApi? {
         return NehaoValidator()
     }
     
@@ -79,10 +85,9 @@ class Test: WebServiceAbleAlamofire{
     func call(_ completionHandler: @escaping (TDResult<User, TDError>) -> Void) {
         handler = completionHandler
         
-        apiCall {[weak self](result) in
+        apiCall {(result) in
             switch result {
             case .Success(let resultString):
-                let isResultValid = self?.validateResult(resultString)
                 print(resultString)
             //print(isResultValid)
             case .Error(let error):
@@ -91,6 +96,7 @@ class Test: WebServiceAbleAlamofire{
             }
             
         }
+        
     }
 }
 

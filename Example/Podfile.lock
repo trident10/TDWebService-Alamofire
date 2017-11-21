@@ -1,10 +1,8 @@
 PODS:
-  - Alamofire (4.5.0)
-  - ReachabilitySwift (3)
-  - TDWebService (0.1.4):
-    - ReachabilitySwift (= 3)
-  - TDWebServiceAlamofire (0.1.0):
-    - Alamofire (= 4.5.0)
+  - TDResult (0.1.1)
+  - TDWebService (0.1.12):
+    - TDResult
+  - TDWebServiceAlamofire (4.5.1.1.0):
     - TDWebService
 
 DEPENDENCIES:
@@ -15,11 +13,10 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
-  TDWebService: 9a316e742c9786fdf9e5f9f7971e29cd56fe5cae
-  TDWebServiceAlamofire: b078c89991bdeef0336775c1bff1292aec2ca0a3
+  TDResult: 8073c47dc4c99174490bce7a35a782ea97ac3c88
+  TDWebService: 24b06ffb79498b008ce426b0baccd29869c80c9c
+  TDWebServiceAlamofire: 5d741e5e8833240009bb2e8b6ee45c248fa8f1a5
 
-PODFILE CHECKSUM: b7a9e330c84400600cfaf439b183b20f42c5af19
+PODFILE CHECKSUM: 8d3f501d2916a49060fb266f38a39ab535335c93
 
 COCOAPODS: 1.3.1

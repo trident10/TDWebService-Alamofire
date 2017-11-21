@@ -102,14 +102,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/ReachabilitySwift/ReachabilitySwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/TDResult/TDResult.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TDWebService/TDWebService.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TDWebServiceAlamofire/TDWebServiceAlamofire.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/ReachabilitySwift/ReachabilitySwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/TDResult/TDResult.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TDWebService/TDWebService.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TDWebServiceAlamofire/TDWebServiceAlamofire.framework"
 fi
