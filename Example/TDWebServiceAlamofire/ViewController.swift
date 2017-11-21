@@ -43,6 +43,22 @@ struct User{
     
 }
 
+struct NehaoValidator: ResultValidatorApi{
+    func isResponseValid(_ result: WSResult) -> TDResult<Bool, TDError> {
+        let resultJson = result as? [String: Any]
+        if resultJson == nil{
+            return TDResult.Error(TDError.init(Validation.NotAuthorised))
+        }
+        return TDResult.init(value: true)
+    }
+    
+    enum Validation: Error{
+        case NotValid
+        case NotAuthorised
+    }
+    
+}
+
 class Test: WebServiceAbleAlamofire{
     
     func url() -> String {
@@ -51,6 +67,10 @@ class Test: WebServiceAbleAlamofire{
     
     enum TestApiError: Error{
         case Unauthorised
+    }
+    
+    func resultValidatorClient() -> ResultValidatorApi {
+        return NehaoValidator()
     }
     
     var handler : ((TDResult<User, TDError>) -> Void)?
