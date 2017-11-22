@@ -2,7 +2,7 @@ PODS:
   - TDResult (0.1.1)
   - TDWebService (0.1.13):
     - TDResult
-  - TDWebServiceAlamofire (4.5.1.1):
+  - TDWebServiceAlamofire (4.5.1.3):
     - TDWebService
 
 DEPENDENCIES:
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   TDResult: 8073c47dc4c99174490bce7a35a782ea97ac3c88
   TDWebService: 8135d168778be65c3531f99ac37bf3ba328fae96
-  TDWebServiceAlamofire: dedd368cfffaa5a5138d81284f6ac2ff66d58563
+  TDWebServiceAlamofire: 5f9e62c0972d874fea62cb5bdddba6c990f3a4d2
 
 PODFILE CHECKSUM: 8d3f501d2916a49060fb266f38a39ab535335c93
 
