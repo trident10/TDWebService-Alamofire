@@ -38,6 +38,19 @@ public enum TDWebServiceError: Error{
     case jsonParsingFailure
 }
 
+public struct TDWSResponse {
+    public var request: TDWebServiceRequest?
+    public var response: HTTPURLResponse?
+    public var resultData: TDWSResult?
+    
+    public init(request: TDWebServiceRequest?, response: HTTPURLResponse?, resultData: TDWSResult?){
+        self.request = request
+        self.response = response
+        self.resultData = resultData
+    }
+}
+
+
 public protocol TDWSResult {}
 extension String: TDWSResult{}
 extension Data: TDWSResult{}

@@ -14,7 +14,7 @@ public protocol TDWebserviceAlamofire:  TDWebService{
 
 extension TDWebserviceAlamofire{
     
-    public func apiCall(_ completionHandler: @escaping (TDResult<TDWSResult, TDError>) -> Void){
+    public func apiCall(_ completionHandler: @escaping (TDResult<TDWSResponse, TDError>) -> Void){
         configurator = TDWebServiceConfiguratorClient()
         configurator.dataSource = self
         let result = configurator.createRequest()
@@ -50,7 +50,7 @@ public class TDWebServiceApiAlamofire: TDWebServiceApi{
     public func cancelAll() {
         if #available(iOS 9.0, *) {
             manager.session.getAllTasks { (tasks) in
-                _ = tasks.map({[weak self] (task) -> Void in
+                _ = tasks.map({ (task) -> Void in
                     task.cancel()
                 })
             }
@@ -65,7 +65,7 @@ public class TDWebServiceApiAlamofire: TDWebServiceApi{
     public var response: AnyObject?
     let manager = SessionManager.default
     
-    public func call(_ request: TDWebServiceRequest, completionHandler: @escaping (TDResult<TDWSResult, TDError>) -> Void){
+    public func call(_ request: TDWebServiceRequest, completionHandler: @escaping (TDResult<TDWSResponse, TDError>) -> Void){
         self.request = request
         let manager = SessionManager.default
         let url:String = request.url
@@ -82,10 +82,10 @@ public class TDWebServiceApiAlamofire: TDWebServiceApi{
                 switch request.resultType{
                 case .Data:
                     if response.data != nil{
-                        completionHandler(TDResult.init(value: response.data!))
+                        completionHandler(TDResult.init(value: TDWSResponse.init(request: self?.request, response: self?.response as? HTTPURLResponse, resultData: response.data!)))
                     }
                     else{
-                        completionHandler(TDResult.init(value: Data()))
+                        completionHandler(TDResult.init(value: TDWSResponse.init(request: self?.request, response: self?.response as? HTTPURLResponse, resultData: Data())))
                     }
                     return
                     
@@ -95,9 +95,9 @@ public class TDWebServiceApiAlamofire: TDWebServiceApi{
                         description = String(data: response.data!, encoding: .utf8)
                     }
                     if description != nil{
-                        completionHandler(TDResult.init(value: description!))
+                        completionHandler(TDResult.init(value: TDWSResponse.init(request: self?.request, response: self?.response as? HTTPURLResponse, resultData: description!)))
                     }else{
-                        completionHandler(TDResult.init(value: ""))
+                        completionHandler(TDResult.init(value: TDWSResponse.init(request: self?.request, response: self?.response as? HTTPURLResponse, resultData: "")))
                     }
                     return
                     
@@ -107,7 +107,7 @@ public class TDWebServiceApiAlamofire: TDWebServiceApi{
                         let jsonData = try JSONSerialization.jsonObject(with: response.data!, options: .allowFragments) as AnyObject
                         var json = TDJson()
                         json.jsonData = jsonData
-                        completionHandler(TDResult.init(value: json))
+                        completionHandler(TDResult.init(value: TDWSResponse.init(request: self?.request, response: self?.response as? HTTPURLResponse, resultData: json)))
                         
                     } catch {
                         //Print the error

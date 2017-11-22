@@ -9,5 +9,5 @@ import Foundation
 import TDResult
 
 public protocol TDResultValidatorApi{
-    func validateResponse(_ result: TDWSResult) -> TDResult<TDWSResult, TDError>
+    func validateResponse(_ result: TDWSResponse) -> TDResult<TDWSResponse, TDError>
 }

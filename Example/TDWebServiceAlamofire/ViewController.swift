@@ -45,8 +45,8 @@ struct User{
 }
 
 struct NehaoValidator: TDResultValidatorApi{
-    func validateResponse(_ result: TDWSResult) -> TDResult<TDWSResult, TDError> {
-        let json = result as! TDJson
+    func validateResponse(_ result: TDWSResponse) -> TDResult<TDWSResponse, TDError> {
+        let json = result.resultData as! TDJson
         let resultJson = json.jsonData as? [String: Any]
         if resultJson == nil{
             return TDResult.Error(TDError.init(Validation.NotAuthorised))

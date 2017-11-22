@@ -40,7 +40,7 @@ public struct TDWebServiceConfiguratorClient: TDWebServiceConfigurator{
         return TDResult.init(value: request)
     }
     
-    public func validateResult(_ result: TDWSResult) -> TDResult<TDWSResult, TDError>{
+    public func validateResult(_ result: TDWSResponse) -> TDResult<TDWSResponse, TDError>{
         if dataSource == nil{
             return TDResult.Error(TDError.init(TDWebServiceError.resultValidationFailed))
         }

@@ -20,7 +20,7 @@ public protocol TDWebService: class {
     func encodingType() -> TDURLEncodingType
     func resultType() -> TDResultType
     
-    func apiCall(_ completionHandler: @escaping (TDResult<TDWSResult, TDError>) -> Void)
+    func apiCall(_ completionHandler: @escaping (TDResult<TDWSResponse, TDError>) -> Void)
     func cancel()
     func cancelAll()
     
@@ -81,7 +81,7 @@ public extension TDWebService{
         return .String
     }
     
-    public func apiCall(_ completionHandler: @escaping (TDResult<TDWSResult, TDError>) -> Void){
+    public func apiCall(_ completionHandler: @escaping (TDResult<TDWSResponse, TDError>) -> Void){
         configurator = TDWebServiceConfiguratorClient()
         configurator.dataSource = self
         let result = configurator.createRequest()
@@ -104,7 +104,7 @@ public extension TDWebService{
     }
     
     
-    public func initiateApiCall(_ request: TDWebServiceRequest, completionHandler: @escaping (TDResult<TDWSResult, TDError>) -> Void){
+    public func initiateApiCall(_ request: TDWebServiceRequest, completionHandler: @escaping (TDResult<TDWSResponse, TDError>) -> Void){
         api.call(request) {[weak self] (result) in
             let validator = self?.configurator.getValidator()
             if validator == nil{

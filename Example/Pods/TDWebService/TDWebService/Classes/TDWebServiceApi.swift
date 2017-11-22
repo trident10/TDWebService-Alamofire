@@ -11,7 +11,7 @@ import TDResult
 public protocol TDWebServiceApi{
     var request: TDWebServiceRequest? {get set}
     var response: AnyObject? {get set}
-    mutating func call(_ request: TDWebServiceRequest, completionHandler: @escaping (TDResult<TDWSResult, TDError>) -> Void)
+    mutating func call(_ request: TDWebServiceRequest, completionHandler: @escaping (TDResult<TDWSResponse, TDError>) -> Void)
     func cancel()
     func cancelAll()
 }
@@ -23,10 +23,10 @@ public struct TDWebServiceApiDefault: TDWebServiceApi {
     public var request: TDWebServiceRequest?
     public var response: AnyObject?
     
-    public mutating func call(_ request: TDWebServiceRequest, completionHandler: @escaping (TDResult<TDWSResult, TDError>) -> Void) {
+    public mutating func call(_ request: TDWebServiceRequest, completionHandler: @escaping (TDResult<TDWSResponse, TDError>) -> Void) {
         self.request = request
         DispatchQueue.main.async {
-            completionHandler(TDResult.Success("Test"))
+            completionHandler(TDResult.Success(TDWSResponse.init(request: request, response: nil, resultData: "Test")))
         }
     }
     
