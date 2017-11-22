@@ -73,7 +73,7 @@ public class TDWebServiceApiAlamofire: TDWebServiceApi{
         manager.session.configuration.timeoutIntervalForRequest = TimeInterval(request.timeOutSession)
         
         manager.request(url, method: self.getHTTPMethodType(type: request.methodType), parameters: request.parameters, encoding: self.getURLEncodingType(type: request.urlEncodingType), headers:request.headers).response(completionHandler: {[weak self] (response) in
-            self?.response = response as AnyObject
+            self?.response = response.response as AnyObject
             if response.error != nil{
                 completionHandler(TDResult.Error(TDError.init(TDWebServiceError.apiError)))
                 return
