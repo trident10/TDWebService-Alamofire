@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TDWebServiceAlamofire'
-  s.version          = '4.5.1.3'
+  s.version          = '4.6.0.1'
   s.summary          = 'An Alamofire API for TDWebService'
 
 # This description is used to generate tags and improve search results.
@@ -38,5 +38,5 @@ An Alamofire API for TDWebService. Use this directly if you need to use Alamofir
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'TDWebService'
+  s.dependency 'TDWebService','0.1.14'
 end

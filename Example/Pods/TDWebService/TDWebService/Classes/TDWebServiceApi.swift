@@ -16,14 +16,14 @@ public protocol TDWebServiceApi{
     func cancelAll()
 }
 
-public struct TDWebServiceApiDefault: TDWebServiceApi {
+public class TDWebServiceApiDefault: TDWebServiceApi {
     
     public init(){}
     
     public var request: TDWebServiceRequest?
     public var response: AnyObject?
     
-    public mutating func call(_ request: TDWebServiceRequest, completionHandler: @escaping (TDResult<TDWSResponse, TDError>) -> Void) {
+    public func call(_ request: TDWebServiceRequest, completionHandler: @escaping (TDResult<TDWSResponse, TDError>) -> Void) {
         self.request = request
         DispatchQueue.main.async {
             completionHandler(TDResult.Success(TDWSResponse.init(request: request, response: nil, resultData: "Test")))

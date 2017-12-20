@@ -120,8 +120,8 @@ public extension TDWebService{
                 else{
                     completionHandler(TDResult.Error(TDError.init(TDWebServiceError.validatorApiFailed)))
                 }
-            default:
-                print("Should not be called")
+            case .Error(let error):
+                completionHandler(TDResult.Error(error))
             }
         }
     }
