@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "Alamofire.h"
 
 FOUNDATION_EXPORT double TDWebServiceAlamofireVersionNumber;
 FOUNDATION_EXPORT const unsigned char TDWebServiceAlamofireVersionString[];
