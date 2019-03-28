@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TDWebServiceAlamofire'
-  s.version          = '4.6.0.1'
+  s.version          = '4.8.1.1'
   s.summary          = 'An Alamofire API for TDWebService'
 
 # This description is used to generate tags and improve search results.

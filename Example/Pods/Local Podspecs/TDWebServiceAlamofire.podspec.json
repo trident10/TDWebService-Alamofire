@@ -1,6 +1,6 @@
 {
   "name": "TDWebServiceAlamofire",
-  "version": "4.6.0.1",
+  "version": "4.8.1.1",
   "summary": "An Alamofire API for TDWebService",
   "description": "An Alamofire API for TDWebService. Use this directly if you need to use Alamofire",
   "homepage": "https://github.com/trident10/TDWebService-Alamofire",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/trident10/TDWebService-Alamofire.git",
-    "tag": "4.6.0.1"
+    "tag": "4.8.1.1"
   },
   "platforms": {
     "ios": "8.0"

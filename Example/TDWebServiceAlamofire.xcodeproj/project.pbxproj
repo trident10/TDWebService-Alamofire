@@ -46,7 +46,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		A1958790A5BEA15A3057E130 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		DE1957F2B910DE92ED65A885 /* TDWebServiceAlamofire.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TDWebServiceAlamofire.podspec; path = ../TDWebServiceAlamofire.podspec; sourceTree = "<group>"; };
+		DE1957F2B910DE92ED65A885 /* TDWebServiceAlamofire.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TDWebServiceAlamofire.podspec; path = ../TDWebServiceAlamofire.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +171,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				42185BB8A1F9D20620A9E676 /* [CP] Embed Pods Frameworks */,
-				ABD852D985E70E98BFBD7EFF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -190,8 +189,6 @@
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				8D2A6C7EB59F7E7CEB88A344 /* [CP] Embed Pods Frameworks */,
-				390DCC7226FCAC11C464CDFC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -300,21 +297,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		390DCC7226FCAC11C464CDFC /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TDWebServiceAlamofire_Tests/Pods-TDWebServiceAlamofire_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		42185BB8A1F9D20620A9E676 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -335,36 +317,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TDWebServiceAlamofire_Example/Pods-TDWebServiceAlamofire_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D2A6C7EB59F7E7CEB88A344 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TDWebServiceAlamofire_Tests/Pods-TDWebServiceAlamofire_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ABD852D985E70E98BFBD7EFF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TDWebServiceAlamofire_Example/Pods-TDWebServiceAlamofire_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
